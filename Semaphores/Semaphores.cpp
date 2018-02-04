@@ -19,15 +19,14 @@ int main(int argc, char** argv) {
 
 		if (world_rank == 0) {
 			Sleep(2000);
-			toggle++;
+			toggle = (toggle + 1) % 2;
 		}
 
 		// Broadcast all tasks
 		MPI_Bcast(&toggle, 1, MPI_INT, 0, MPI_COMM_WORLD);
-		toggle = (toggle + 1) % 2;
+		semaphore = (world_rank + toggle) % 2;
 		MPI_Barrier(MPI_COMM_WORLD);
 		// Wait all tasks
-		semaphore = (world_rank + toggle) % 2;
 		cout << "Process " << world_rank << " is " << semaphore << endl;
 
 		if (world_rank == 0)
