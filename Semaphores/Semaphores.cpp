@@ -71,6 +71,7 @@ int main(int argc, char** argv) {
 		MPI_Barrier(MPI_COMM_WORLD);
 		// Wait all tasks
 
+
 		if (world_rank == 0)
 		{
 			file.open("semaphores.txt");
@@ -86,11 +87,11 @@ int main(int argc, char** argv) {
 
 			if (toggle == 0 || toggle == 2)
 			{
-				Sleep(8000);
+				Sleep(2000);
 			}
 			else if (toggle == 1 || toggle == 3)
 			{
-				Sleep(2000);
+				Sleep(8000);
 			}
 		}
 	}
