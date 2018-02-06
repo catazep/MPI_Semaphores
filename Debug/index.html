@@ -32,14 +32,14 @@
 		.semaphore {
 			position       : absolute;
 			width          : 20px;
-			height         : 40px;
-			display        : flex;
-			flex-direction : column;
+			height         : 20px;
 		}
 
 		.semaphore * {
+			width : 20px;
 			height        : 20px;
 			border-radius : 50%;
+			position : absolute;
 		}
 
 		.light-red {
@@ -84,35 +84,35 @@
 <body>
 	<div class="container">
 		<img src="road.png" alt="" id="road">
-		<div class="draggable semaphore s1 off" style="left: 239px; top: 387px;">
+		<div class="draggable semaphore s1 off" style="left: 242px; top: 156px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s2 off rotate" style="left: 233px; top: 151px;">
+		<div class="draggable semaphore s2 rotate off" style="left: 370px; top: 157px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s3 off" style="left: 374px; top: 139px;">
+		<div class="draggable semaphore s3 off" style="left: 541px; top: 159px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s4 off" style="left: 542px; top: 139px;">
+		<div class="draggable semaphore s4 off" style="left: 542px; top: 246px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s5 off rotate" style="left: 540px; top: 245px;">
+		<div class="draggable semaphore s5 rotate off" style="left: 543px; top: 384px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s6 off" style="left: 546px; top: 381px;">
+		<div class="draggable semaphore s6 off" style="left: 422px; top: 383px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s7 off rotate" style="left: 412px; top: 386px;">
+		<div class="draggable semaphore s7 rotate off" style="left: 236px; top: 389px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
-		<div class="draggable semaphore s8 off rotate" style="left: 241px; top: 272px;">
+		<div class="draggable semaphore s8 rotate off" style="left: 235px; top: 288px;">
 			<div class="light-red"></div>
 			<div class="light-green"></div>
 		</div>
@@ -177,7 +177,7 @@
 					// for ( let i = 0; i < 8; i++ ) {
 					// 	semaphores[i] = rand( 0, 1 );
 					// }
-					semaphores = data.split('\n').map(item => parseInt(item));
+					semaphores = data.split('').map(item => parseInt(item));
 					console.log("data ->",semaphores);
 
 					semaphores.forEach( ( semaphore, index ) => {
