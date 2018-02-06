@@ -1,5 +1,6 @@
 .vs
 Semaphores/Semaphores.vcxproj
+Semaphores/Debug
 Semaphores/x64/
 *.ilk
 *.pdb
