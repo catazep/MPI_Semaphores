@@ -20,11 +20,11 @@ int main(int argc, char** argv) {
 
 	if (world_rank == 0) {
 		semaphores = (int *)malloc(world_rank * 2 * sizeof(int));
-		for (int i = 0; i<world_rank; i++)
+		for (int i = 0; i < world_rank; i++)
 			semaphores[i] = 2 * i + 1;
 
 		printf("Processor %d has data: ", world_rank);
-		for (int i = 0; i<world_rank; i++)
+		for (int i = 0; i < world_rank; i++)
 			printf("%d ", semaphores[i]);
 		printf("\n");
 	}
@@ -77,19 +77,20 @@ int main(int argc, char** argv) {
 
 			for (size_t i = 0; i < 8; i++)
 			{
-				file << semaphores[i] << endl;
+				file << semaphores[i];
+				cout << semaphores[i];
 			}
 
 			file.close();
-
 			cout << endl;
+
 			if (toggle == 0 || toggle == 2)
 			{
-				Sleep(4500);
+				Sleep(8000);
 			}
 			else if (toggle == 1 || toggle == 3)
 			{
-				Sleep(1500);
+				Sleep(2000);
 			}
 		}
 	}
